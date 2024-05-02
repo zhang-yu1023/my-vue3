@@ -2,17 +2,19 @@
 
 ## 项目开发
  ### 搭建框架
- 1. 创建vue3项目：vue create my-vue
- 2. 引入element-ui: （VUE3 项目）
+ 1. 创建vue3项目：`vue create my-vue`
+ 2. 使用typscript : `vue add typescript`
+ 3. 引入element-ui: （VUE3 项目）
     * 安装 `npm i element-plus -s`
-    * vue3 使用命令 ：`npm add element`,并在生成的 plugins/elements 引入
-        ```import { createApp } from "vue";
-           import App from "../App.vue";
+    * main.ts引入 element-plus
+        ```import { createApp } from 'vue'
+           import App from './App.vue'
+           import ElementPlus from 'element-plus'
+           import 'element-plus/dist/index.css'
            
-           import "../element-variables.scss";
-           import ElementUI from "element-plus";
-           
-           createApp(App).use(ElementUI);
+           const app = createApp(App)
+           app.use(ElementPlus, { size: 'small', zIndex: 3000 })
+           app.mount('#app')
         ```
 
 

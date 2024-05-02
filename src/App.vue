@@ -2,15 +2,17 @@
   <HomePage></HomePage>
 </template>
 
-<script>
+<script lang="ts">
+import { defineComponent } from "vue";
+// import HelloWorld from './components/HelloWorld.vue';
 import HomePage from "./views/homePage.vue";
 
-export default {
-  name: "app",
+export default defineComponent({
+  name: "App",
   components: {
     HomePage,
   },
-};
+});
 </script>
 
 <style>
