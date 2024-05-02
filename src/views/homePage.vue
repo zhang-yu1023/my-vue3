@@ -8,11 +8,21 @@
           mode="horizontal"
           @select="handleSelect"
         >
-          <el-menu-item index="1">首页</el-menu-item>
+          <el-menu-item index="1">
+            <router-link to="/">首页</router-link></el-menu-item
+          >
           <el-sub-menu index="2">
             <template #title>功能</template>
-            <el-menu-item index="2-1">item one</el-menu-item>
-            <el-menu-item index="2-2">item two</el-menu-item>
+            <el-menu-item index="2-1">
+              <router-link to="/CanvasPage"
+                >canvas结构树</router-link
+              ></el-menu-item
+            >
+            <el-menu-item index="2-2">
+              <router-link to="/ChartsPage"
+                >echarts图表</router-link
+              ></el-menu-item
+            >
             <el-menu-item index="2-3">item three</el-menu-item>
             <el-sub-menu index="2-4">
               <template #title>item four</template>
@@ -27,15 +37,16 @@
         </el-menu>
       </el-header>
 
-      <el-container>
+      <!-- <el-container>
         <el-aside width="200px">目录</el-aside>
         <el-main>
           <article class="article">
             <section class="section">section</section>
           </article>
         </el-main>
-      </el-container>
+      </el-container>-->
     </el-container>
+
     <!-- <nav class="nav"><i class="el-icon-s-home"></i>首页</nav>
       <nav class="nav"><i class="el-icon-arrow-down"></i>功能</nav>
       <nav class="nav"><i class="el-icon-s-management"></i>分类</nav>
@@ -46,6 +57,9 @@
     <!-- <nav class="nav" >退出<i class="el-icon-user-solid"></i></nav> -->
     <!-- </header> -->
   </div>
+
+  <router-view></router-view>
+
   <div class="login-content" style="display: none">
     <i class="el-icon-close"></i>
     <div class="form">
@@ -83,6 +97,7 @@
 
 <script lang="ts" setup>
 import { ref } from "vue";
+import { RouterView, RouterLink } from "vue-router";
 
 const activeIndex = ref("1");
 const handleSelect = (key: string, keyPath: string[]) => {
@@ -92,6 +107,10 @@ const handleSelect = (key: string, keyPath: string[]) => {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
+a {
+  text-decoration: none;
+  color: #303133;
+}
 .el-aside {
   // padding: 0 20px;
   // background-color: #00000068;
